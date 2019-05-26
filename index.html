@@ -1,0 +1,111 @@
+</html>
+<html lang="en">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+  <title>TODO</title>
+  <link rel="shortcut icon" type="image/x-icon" href="img/icon-ok.ico" />
+</head>
+<body>
+<header class="site__header">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-7">
+        <span id="headAnimation" style="display: block;">
+          <h1 class="todo mega text-center" onclick="testAnim('flip')">TODO</h1>
+        </span>
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-7" >
+        <h5 class="todo text-center" onclick="testAnim('flash')" >LIST</h5>
+      </div>
+    </div>
+  </div>
+</header>
+<div class="main">
+  <form class="was-validated" onkeydown="if (event.keyCode == 13) { addTask();return false;}" role="form" autocomplete="off">
+  <div class="form-row justify-content-center">
+    <div class="col-xl-4 col-md-6 col-sm-8 col-10">
+      <input  type="text" id="addText"  class="addTask form-control is-invalid"  placeholder="Add a task..." required>
+    </div>
+    <div class="col-auto">
+      <button type="button" onclick="addTask()" class="addBtn btn btn-success btn-icon btn-circle">
+          <span class="icon"><i class="fas fa-plus"></i></span>
+      </button>
+    </div>
+  </div>
+  </form>
+  <div class="row justify-content-center">
+    <div class= class="col-2">
+      <div class="search-box">
+        <input type="text" id="myInput" onkeyup="search()" class="search-txt" placeholder="Type to search"/>
+        <a class="search-btn">
+          <i class="fas fa-search"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+<ul id="list">
+
+</ul>
+
+
+
+<section id="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-5">
+        <ul class="list-unstyled list-inline social text-center">
+          <li class="list-inline-item"><a onclick="Share.facebook('URL','TITLE','IMG_PATH','DESC')"><i class="fab fa-facebook"></i></a></li>
+          <li class="list-inline-item"><a onclick="Share.twitter('URL','TITLE')"><i class="fab fa-twitter"></i></a></li>
+          <li class="list-inline-item"><a onclick="Share.linkedin('URL','DESC')"><i class="fab fa-linkedin"></i></a></li>
+        </ul>
+      </div>
+      </hr>
+    </div>
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-2 text-center text-white">
+        <p class="h6">Develop by Oleg Boychuk</p>
+      </div>
+      </hr>
+    </div>
+  </div>
+</section>
+
+<!-- Optional JavaScript -->
+<script>
+
+  function testAnim(x) {
+    $('#headAnimation').removeClass().addClass(x + ' animated').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd', function(){
+      $(this).removeClass();
+    });
+  }
+
+  $(document).ready(function(){
+    $('.flip').change(function(){
+      testAnim('flip');
+    });
+  });
+
+
+
+</script>
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="js/vendor/modernizr-3.7.1.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="js/plugins.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
